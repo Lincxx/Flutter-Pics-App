@@ -1,4 +1,4 @@
-# pics
+# Flutter-Pics-App
 
 A new Flutter project.
 
