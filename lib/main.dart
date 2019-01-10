@@ -7,7 +7,7 @@ void main() {
   var app = MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text('Pics'),
+        title: Text('Lets get some images'),
       ),
     ),
   );
