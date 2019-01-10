@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 void main() {
   // Create a new text widget to show some text on the screen
   var app = MaterialApp(
-    home: Text('Hi there!'),
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text('Pics'),
+      ),
+    ),
   );
 
   // take that widget and get it on the screen
