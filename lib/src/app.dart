@@ -1,8 +1,8 @@
 // import flutter helper library
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 // We need to refactor our StatelessWidget to a StatefullWidget
-
 class App extends StatefulWidget {
   createState() {
     return AppState();
@@ -11,6 +11,12 @@ class App extends StatefulWidget {
 
 class AppState extends State<App> {
   int counter = 0;
+
+  void fetchImage() {
+    counter++;
+    http.get('https://jsonplaceholder.typicode.com/photos/1/$counter');
+  }
+
   // Must definve a build method that returns the widget that *this* widget will show
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,16 +27,14 @@ class AppState extends State<App> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () {
-            setState(() {
-              counter += 1;
-            });
-          },
+          onPressed: fetchImage, // here we are making reference to the fetchImage method
         ),
       ),
     );
   }
 }
+
+
 
 // Create a class that will be our custom widget - this class must extend the StatelssWidget base class
 // class App extends StatelessWidget {
