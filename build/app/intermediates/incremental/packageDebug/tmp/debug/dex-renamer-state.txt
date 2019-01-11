@@ -1,4 +1,0 @@
-#Thu Jan 10 08:55:49 EST 2019
-base.0=G\:\\dart-and-flutter-the-complete-developers-guide\\Flutter-Pics-App\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex
