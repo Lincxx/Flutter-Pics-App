@@ -2,6 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'dart:async';
+import 'dart:convert'; //this is where json lives
+
+import './models/image_model.dart';
+
 // We need to refactor our StatelessWidget to a StatefullWidget
 class App extends StatefulWidget {
   createState() {
@@ -11,10 +16,15 @@ class App extends StatefulWidget {
 
 class AppState extends State<App> {
   int counter = 0;
+  List<ImageModel> images = [];
 
-  void fetchImage() {
+  void fetchImage() async {
     counter++;
-    http.get('https://jsonplaceholder.typicode.com/photos/1/$counter');
+    var response = await http.get('https://jsonplaceholder.typicode.com/photos/1/$counter');
+
+    var imageModel = ImageModel.fromJson(json.decode(response.body));
+    images.add(imageModel);
+    print(images);
   }
 
   // Must definve a build method that returns the widget that *this* widget will show
